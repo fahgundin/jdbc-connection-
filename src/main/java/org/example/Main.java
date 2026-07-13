@@ -8,23 +8,6 @@ import java.util.Scanner;
 public class Main {
     static void main() {
 
-        String statement = "SELECT nome, rga FROM Aluno";
-        try{
-            Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://127.0.0.1:3306/cadastro_escolar",
-                    "root",
-                    "MinhaSenha123!"
-            );
-            Statement stm = con.createStatement();
-            ResultSet res = stm.executeQuery(statement);
-            while(res.next()){
-                String aluno_str = res.getString("nome");
-                IO.println(aluno_str);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
         Scanner sc = new Scanner(System.in);
         while(true){
             int opcao = sc.nextInt();
