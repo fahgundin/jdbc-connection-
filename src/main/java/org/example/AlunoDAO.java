@@ -20,9 +20,9 @@ public class AlunoDAO {
             stmt.setString(3,aluno.getEmail());
             stmt.setString(4,aluno.getCurso());
             stmt.executeUpdate();
-            return "Cadastro realizado com sucesso";
+            return "\n Cadastro realizado com sucesso \n";
         } catch (Exception e) {
-            return "Cadastro falhou";
+            return "\n Cadastro falhou \n";
         }
     }
     public ArrayList<Aluno> listarAlunos(){
@@ -36,12 +36,25 @@ public class AlunoDAO {
                 aluno.setNome(rs.getString("nome"));
                 aluno.setRga(rs.getString("rga"));
                 aluno.setEmail(rs.getString("email"));
-                aluno.setCurso(rs.getString("Curso"));
+                aluno.setCurso(rs.getString("curso"));
+                lista.add(aluno);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return lista;
+    }
+
+    public String deletar(int id_aluno){
+        String sql = "DELETE FROM Aluno WHERE id = ?";
+        try(PreparedStatement stmt = this.con.prepareStatement(sql)){
+            stmt.setInt(1, id_aluno);
+            stmt.executeUpdate();
+            return "Deletado com sucesso";
+        } catch (SQLException e) {
+            return "Falha ao deletar";
+        }
+
     }
 
 }
