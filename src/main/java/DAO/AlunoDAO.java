@@ -1,4 +1,6 @@
-package org.example;
+package DAO;
+
+import Entity.Aluno;
 
 import java.sql.*;
 import java.util.ArrayList;

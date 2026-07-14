@@ -1,5 +1,10 @@
 package org.example;
 
+import DAO.AlunoDAO;
+import DAO.ProfessorDAO;
+import Entity.Aluno;
+import Entity.Professor;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;

@@ -1,10 +1,10 @@
-package org.example;
+package Entity;
 
-public class Aluno {
+public class Professor {
     private int id;
     private String nome;
-    private String rga;
-    private String email;
+    private String siape;
+    private String unidade_academica;
     private String curso;
 
     public int getId() {
@@ -23,20 +23,20 @@ public class Aluno {
         this.nome = nome;
     }
 
-    public String getRga() {
-        return rga;
+    public String getSiape() {
+        return siape;
     }
 
-    public void setRga(String rga) {
-        this.rga = rga;
+    public void setSiape(String siape) {
+        this.siape = siape;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUnidade_academica() {
+        return unidade_academica;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUnidade_academica(String unidade_academica) {
+        this.unidade_academica = unidade_academica;
     }
 
     public String getCurso() {
